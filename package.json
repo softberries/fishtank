@@ -255,6 +255,10 @@
     "yarn": "^1.12.3"
   },
   "dependencies": {
+    "@coreui/coreui": "^2.1.1",
+    "@coreui/coreui-plugin-chartjs-custom-tooltips": "^1.2.0",
+    "@coreui/icons": "0.3.0",
+    "@coreui/react": "^2.1.1",
     "@fortawesome/fontawesome-free": "^5.5.0",
     "devtron": "^1.4.0",
     "electron-debug": "^2.0.0",
