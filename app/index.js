@@ -5,6 +5,9 @@ import Root from './containers/Root';
 import { configureStore, history } from './store/configureStore';
 import './app.global.css';
 
+/* eslint-disable import/no-webpack-loader-syntax */
+import '!style-loader!css-loader!bootstrap/dist/css/bootstrap.css';
+
 const store = configureStore();
 
 render(
