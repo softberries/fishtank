@@ -1,0 +1,12 @@
+.cards {
+  margin: 5px;
+}
+
+.card {
+  max-width: 250px;
+  font-size: 10px;
+}
+
+.content-inner {
+  padding: 10px;
+}
