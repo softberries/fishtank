@@ -5,7 +5,11 @@ import { Link } from 'react-router-dom';
 import routes from '../constants/routes';
 import styles from './Home.css';
 
-type Props = {};
+type Props = {
+  increment: (dir) => void,
+  count: number,
+  dir: []
+};
 const { remote } = require('electron');
 
 export default class Home extends Component<Props> {
@@ -19,11 +23,16 @@ export default class Home extends Component<Props> {
       },
       dir => {
         console.log(dir);
+        this.props.increment(dir);
       }
     );
   };
 
   render() {
+    const {
+      count,
+      dir
+    } = this.props;
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -31,7 +40,6 @@ export default class Home extends Component<Props> {
             <Button color="danger" onClick={() => this.selectDirectory()}>
               Select Directory
             </Button>
-
             <div
               className="collapse navbar-collapse"
               id="navbarSupportedContent"
@@ -62,10 +70,9 @@ export default class Home extends Component<Props> {
                 alt="Card cap"
               />
               <div className="card-body">
-                <h5 className="card-title">title</h5>
+                <h5 className="card-title">title: {count}</h5>
                 <p className="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the cards content.
+                  Dir: {dir}
                 </p>
                 <a href="#" className="btn btn-primary">
                   Go somewhere
