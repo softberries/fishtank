@@ -7,7 +7,6 @@ import styles from './Home.css';
 
 
 const { remote } = require('electron');
-const Store = require('electron-store');
 type Props = {
   kg: number
 };

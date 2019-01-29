@@ -4,6 +4,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import routes from '../constants/routes';
 import CounterPage from '../containers/CounterPage';
 import HomePage from '../containers/HomePage';
+import SettingsPage from '../containers/SettingsPage';
 
 class DefaultLayout extends Component {
   render() {
@@ -23,7 +24,10 @@ class DefaultLayout extends Component {
               </Link>
             </li>
             <li>
-              <a href="#">About</a>
+              <Link to={routes.SETTINGS}>
+                <i className="fa fa-arrow-left fa-3x" />
+                Settings
+              </Link>
             </li>
             <li>
               <a
@@ -66,6 +70,7 @@ class DefaultLayout extends Component {
         <div id="content">
           <Switch>
             <Route path={routes.COUNTER} component={CounterPage} />
+            <Route path={routes.SETTINGS} component={SettingsPage} />
             <Route path={routes.HOME} component={HomePage} />
           </Switch>
         </div>
