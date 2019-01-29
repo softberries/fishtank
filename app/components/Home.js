@@ -5,11 +5,17 @@ import { Link } from 'react-router-dom';
 import routes from '../constants/routes';
 import styles from './Home.css';
 
-type Props = {};
+
 const { remote } = require('electron');
+const Store = require('electron-store');
+type Props = {
+  kg: number
+};
+
+
 
 export default class Home extends Component<Props> {
-  props: Props;
+  props: Props = { kg: 1 };
 
   selectDirectory = () => {
     const { dialog } = remote;
@@ -62,7 +68,7 @@ export default class Home extends Component<Props> {
                 alt="Card cap"
               />
               <div className="card-body">
-                <h5 className="card-title">title</h5>
+                <h5 className="card-title">title: {JSON.stringify(this.props)}</h5>
                 <p className="card-text">
                   Some quick example text to build on the card title and make up
                   the bulk of the cards content.
